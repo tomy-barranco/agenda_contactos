@@ -17,12 +17,9 @@ def cargar_agenda(archivo="agenda.csv"):
   try:
     agenda = pd.read_csv(archivo, encoding="utf-8")
     print(agenda)
-    print("📒 Agenda cargada correctamente")
+    print("📒 Agenda cargada correctamente \n")
   except FileNotFoundError:
-    print("⚠️ No se encontró el archivo, creando una nueva agenda...")
+    print("⚠️ No se encontró el archivo, creando una nueva agenda...\n")
     open("agenda.csv", "x")
     df = pd.DataFrame(columns=["Nombre", "Telefono", "Correo"])
     df.to_csv("agenda.csv", index=False)
-
-
-cargar_agenda()
